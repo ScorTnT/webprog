@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>이미지 테두리 만들기</title>
+    <style>
+        div {
+            width: 400px;
+            height: 250px;
+            padding: 5px;
+            border: 15px solid;
+        }
+        #frame {border-image: url(frame.jpg) 50 repeat;}
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+        }
+    </style>
+</head>
+<body>
+    <h1>이미지 테두리 만들기</h1>
+    <hr>
+    <div id="frame">
+        <img src="element.jpg">
+    </div>
+</body>
+</html>
