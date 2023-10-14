@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <script>
+        function cal(){
+            var cal = prompt("수식 입력",'2+12*8-20/7');
+            return cal;
+        }
+    </script>
+    <title>eval()로 수식계산</title>
+</head>
+<body>
+    <h1>eval()로 수식 계산</h1>
+    <hr>
+    <script>
+        document.write(cal(),' = ',eval(cal()));
+    </script>
+</body>
+</html>
