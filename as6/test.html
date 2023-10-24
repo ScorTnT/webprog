@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        @import url(test.css);
+        @import url('test.css');
+        @import "test.css";
+        body {color: blue;}
+        td:nth-child(even){color: brown;
+                            border: 6;
+                            border-color: blueviolet;}
+    </style>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>회원정보</legend>
+            <input type="tel" size="25em" style="display:block">
+            <input type="url">
+        </fieldset>
+    </form>
+    <table style="width: 300px;" border="4px ;">
+        <caption>1학기성적</caption>
+            <thead>
+                <th>h1</th><th>h2</th><th>h3</th>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>2</td><td>3</td></tr>
+            </tbody>
+            <tfoot>
+                <tr><td>foot1</td><td>foot2</td><td>foot3</td></tr>
+            </tfoot>
+        </table>
+</body>
+</html>
