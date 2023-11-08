@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>transform.rotate()</title>
+    <script>
+        function sizetrans(obj){
+            if(obj.style.transform==""||obj.style.transform=="scale(1, 1)") obj.style.transform="scale(2,1)"
+            else if(obj.style.transform=="scale(2, 1)") obj.style.transform="scale(3,1)"
+            else if(obj.style.transform=="scale(3, 1)") obj.style.transform="scale(4,1)"
+            else if(obj.style.transform=="scale(4, 1)") obj.style.transform="scale(1,1)"
+        }
+    </script>
+</head>
+<body style="text-align: center;">
+    <h1>클릭하면 2,3,4배로 옆으로 늘어납니다.</h1>
+    <hr>
+    <img src="media/스폰지밥.jpg" style="width: 300px; height: 330px; text-align: center; " onclick=sizetrans(this)>
+</body>
+</html>
