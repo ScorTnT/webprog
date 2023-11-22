@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>계산기 만들기</title>
+    <style>
+        input[type=button] {width: 55px; height: 25px; margin:0px 10px}
+    </style>
+    <script>
+        function put(obj){
+            var area = document.getElementById("cal");
+            if(area.value == 0) area.value = obj.value
+            else area.value += obj.value;
+        }
+        function setZero(){
+            var area = document.getElementById("cal");
+            area.value=0;
+        }
+        function cal(){
+            var area = document.getElementById("cal");
+            area.value = eval(area.value)
+        }
+        function del(){
+            var area = document.getElementById("cal");
+            area.value = area.value.slice(0,-1);
+        }
+    </script>
+</head>
+<body>
+    <h3>계산기 만들기</h3>
+    <hr>
+    <div style="width: 300px;">
+        <input type="text" id="cal" value="0" readonly style="width: 100%; margin: 0px 10px;">
+        <table style="text-align: center; margin: 0px 10px;">
+            <tbody>
+                <tr>
+                    <td><input type="button" value="BACK" onclick="del()"></input></td>
+                    <td><input type="button" value="CE" onclick="setZero()"></input></td>
+                    <td><input type="button" value="C" onclick="setZero()"></input></td>
+                    <td><input type="button" value="=" onclick="cal()"></input></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="7" onclick="put(this)"></input></td>
+                    <td><input type="button" value="8" onclick="put(this)"></input></td>
+                    <td><input type="button" value="9" onclick="put(this)"></input></td>
+                    <td><input type="button" value="/" onclick="put(this)"></input></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="4" onclick="put(this)"></input></td>
+                    <td><input type="button" value="5" onclick="put(this)"></input></td>
+                    <td><input type="button" value="6" onclick="put(this)"></input></td>
+                    <td><input type="button" value="*" onclick="put(this)"></input></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="1" onclick="put(this)" ></input></td>
+                    <td><input type="button" value="2" onclick="put(this)"></input></td>
+                    <td><input type="button" value="3" onclick="put(this)"></input></td>
+                    <td><input type="button" value="-" onclick="put(this)"></input></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="0" onclick="put(this)"></input></td>
+                    <td><input type="button" value="+" onclick="put(this)"></input></td>
+                    <td><input type="button" value="NONE" onclick="event.preventDefault()"></input></td>
+                    <td><input type="button" value="NONE" onclick="event.preventDefault()"></input></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
