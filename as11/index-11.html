@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function show(){
+            var canvas = document.getElementById("myCanvas");
+            var x = document.getElementById("x");
+            var y = document.getElementById("y");
+            var radius = document.getElementById("radius");
+            var path = document.getElementById("path");
+            var startdeg = document.getElementById("startdeg");
+            var findeg = document.getElementById("findeg");
+            var width = document.getElementById("width");
+            var color = document.getElementById("color");
+            alert(radius.type);
+        }
+        function draw(){
+            var canvas = document.getElementById("myCanvas");
+            var x = document.getElementById("x");
+            var y = document.getElementById("y");
+            var radius = document.getElementById("radius");
+            var path = document.getElementById("path");
+            var startdeg = document.getElementById("startdeg");
+            var findeg = document.getElementById("findeg");
+            var width = document.getElementById("width");
+            var color = document.getElementById("color");
+            var contents = canvas.getContext("2d");
+
+            contents.beginPath();
+            var way;
+            if(path.value == "clock") way = false;
+            else way = true;
+            contents.strokeStyle = color.value;
+            contents.lineWidth = parseInt(width.value);
+            contents.arc(x.value, y.value, radius.value, Math.PI*startdeg.value/180, Math.PI*findeg.value/180, way);
+            contents.stroke();
+        }
+        function erase(){
+            var canvas = document.getElementById("myCanvas");
+            var contents = canvas.getContext("2d");
+            contents.clearRect(0,0,canvas.width,canvas.height);
+        }
+    </script>
+    <meta charset="UTF-8">
+    <title>폼으로 도형 그리기</title>
+</head>
+<body>
+    <h2>폼으로 원호 그리기</h2>
+    <hr>
+    <table>
+        <form>
+        <tbody style="text-align: right;">
+            <tr>
+                <td>x <input type="text" id="x"></td><td>y <input type="text" id="y"></td>
+            </tr>
+            <tr>
+                <td>반지름 <input type="text" id="radius"></td>
+                <td><label for="select-id">방향 </label>
+                    <select name="" id="path">
+                    <option value="clock">시계방향</option>
+                    <option value="disclock">반시계방향</option>
+                    </select> </td>
+                </tr>
+            <tr>
+                <td>시작각도 <input type="text" id="startdeg"></td>
+                <td>끝각도 <input type="text" id="findeg"></td>
+            </tr>
+            <tr>
+                <td>선굵기 <input type="text" id="width"></td>
+                <td>선색 <input type="color" id="color"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="그리기" onclick="draw()"></td>
+                <td><input type="button" value="지우기" onclick="erase()"></td>
+            </tr>
+        </tbody>
+        </form>
+    </table>
+    <canvas id="myCanvas" style ="background-color: aliceblue" height="300px" width="600px"></canvas>
+</body>
+</html>
